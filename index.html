@@ -1152,108 +1152,115 @@ finally:
 </div>
 
 <!-- ════════════════════════════════════════════
-     SECTION 10 — Database Communication (PDBC)
+     SECTION 10 — Mixed Practice
 ═════════════════════════════════════════════ -->
 <div class="section-header">
   <div class="num">10</div>
-  <h2>Database Communication (PDBC) &amp; OOP Intro</h2>
+  <h2>Mixed Practice</h2>
   <div class="line"></div>
 </div>
 
-<div class="card" data-q="59" data-section="PDBC & OOP">
+<div class="card" data-q="59" data-section="Mixed Practice">
   <div class="q-label">Q59 · MCQ</div>
-  <div class="q-text">Which Python module/connector is commonly used to connect Python with a <strong>MySQL</strong> database?</div>
+  <div class="q-text">What is the output of <code>len([1, [2, 3], 4])</code>?</div>
   <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> <code>sqlite3</code></button>
-    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> <code>mysql-connector-python</code></button>
-    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>psycopg2</code></button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>cx_Oracle</code></button>
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> 2</button>
+    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> 3</button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> 4</button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> Error</button>
   </div>
-  <div class="feedback"><code>cx_Oracle</code> is for Oracle, <code>psycopg2</code> for PostgreSQL, <code>sqlite3</code> for SQLite (built-in).</div>
+  <div class="feedback"><code>len()</code> counts only top-level elements. The list has 3 items: <code>1</code>, <code>[2, 3]</code>, and <code>4</code>.</div>
 </div>
 
-<div class="card" data-q="60" data-section="PDBC & OOP">
+<div class="card" data-q="60" data-section="Mixed Practice">
   <div class="q-label">Q60 · MCQ</div>
-  <div class="q-text">What is the correct order of steps to execute a query in Python DB Communication?</div>
+  <div class="q-text">Which of the following will raise a <code>TypeError</code>?</div>
   <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> Execute → Connect → Create Cursor → Fetch</button>
-    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> Connect → Create Cursor → Execute → Fetch/Commit → Close</button>
-    <button class="option-btn" data-val="C"><span class="opt-key">C</span> Import → Fetch → Connect → Close</button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> Connect → Fetch → Execute → Close</button>
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> <code>"5" + "3"</code></button>
+    <button class="option-btn" data-val="B"><span class="opt-key">B</span> <code>5 + 3.0</code></button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>True + 1</code></button>
+    <button class="option-btn" data-val="D" data-correct="true"><span class="opt-key">D</span> <code>"5" + 3</code></button>
   </div>
-  <div class="feedback">Standard flow: 1) connect, 2) create cursor, 3) execute SQL, 4) fetch results (SELECT) or commit (INSERT/UPDATE/DELETE), 5) close.</div>
+  <div class="feedback">You cannot concatenate a <code>str</code> and an <code>int</code> directly. Use <code>"5" + str(3)</code> or <code>int("5") + 3</code>.</div>
 </div>
 
-<div class="card" data-q="61" data-section="PDBC & OOP">
+<div class="card" data-q="61" data-section="Mixed Practice">
   <div class="q-label">Q61 · MCQ</div>
-  <div class="q-text">Which SQL command is used to retrieve data from a table?</div>
-  <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> <code>INSERT</code></button>
-    <button class="option-btn" data-val="B"><span class="opt-key">B</span> <code>UPDATE</code></button>
-    <button class="option-btn" data-val="C" data-correct="true"><span class="opt-key">C</span> <code>SELECT</code></button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>CREATE</code></button>
-  </div>
-  <div class="feedback"><code>SELECT</code> is a DRL (Data Retrieval Language) command. <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> are DML. <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code> are DDL.</div>
-</div>
-
-<div class="card" data-q="62" data-section="PDBC & OOP">
-  <div class="q-label">Q62 · MCQ</div>
-  <div class="q-text">After executing an <code>INSERT</code> statement in Python DB communication, what must you call to save the changes permanently?</div>
-  <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> <code>cursor.save()</code></button>
-    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> <code>connection.commit()</code></button>
-    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>cursor.flush()</code></button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>connection.push()</code></button>
-  </div>
-  <div class="feedback">DML operations (INSERT, UPDATE, DELETE) require <code>connection.commit()</code> to persist. Without it, changes are rolled back when the connection closes.</div>
-</div>
-
-<div class="card" data-q="63" data-section="PDBC & OOP">
-  <div class="q-label">Q63 · MCQ</div>
-  <div class="q-text">What is the difference between <code>cursor.fetchone()</code> and <code>cursor.fetchall()</code>?</div>
+  <div class="q-text">What is the difference between <code>list.extend([4, 5])</code> and <code>list.append([4, 5])</code>?</div>
   <div class="options">
     <button class="option-btn" data-val="A"><span class="opt-key">A</span> They are identical</button>
-    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> <code>fetchone()</code> returns a single row as a tuple; <code>fetchall()</code> returns all rows as a list of tuples</button>
-    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>fetchall()</code> returns only column names</button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>fetchone()</code> returns a dictionary</button>
+    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> <code>extend()</code> adds each element individually; <code>append()</code> adds the list as a single nested element</button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>append()</code> adds each element individually; <code>extend()</code> nests the list</button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>extend()</code> only works with tuples</button>
   </div>
-  <div class="feedback"></div>
+  <div class="feedback">After <code>a = [1,2,3]</code>: <code>a.extend([4,5])</code> → <code>[1,2,3,4,5]</code>; <code>a.append([4,5])</code> → <code>[1,2,3,[4,5]]</code>.</div>
 </div>
 
-<div class="card" data-q="64" data-section="PDBC & OOP">
+<div class="card" data-q="62" data-section="Mixed Practice">
+  <div class="q-label">Q62 · MCQ</div>
+  <div class="q-text">What is the output of <code>bool("") or bool("hello")</code>?</div>
+  <div class="options">
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> False</button>
+    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> True</button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>""</code></button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>"hello"</code></button>
+  </div>
+  <div class="feedback"><code>bool("")</code> is <code>False</code>; <code>bool("hello")</code> is <code>True</code>. <code>False or True</code> evaluates to <code>True</code>.</div>
+</div>
+
+<div class="card" data-q="63" data-section="Mixed Practice">
+  <div class="q-label">Q63 · MCQ</div>
+  <div class="q-text">What happens when you open a file with mode <code>"x"</code> and the file already exists?</div>
+  <div class="options">
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> It overwrites the existing file</button>
+    <button class="option-btn" data-val="B"><span class="opt-key">B</span> It appends to the existing file</button>
+    <button class="option-btn" data-val="C" data-correct="true"><span class="opt-key">C</span> It raises a <code>FileExistsError</code></button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> It opens the file in read mode</button>
+  </div>
+  <div class="feedback">Mode <code>"x"</code> is for exclusive creation — it is designed to create a new file and will fail if the file already exists.</div>
+</div>
+
+<div class="card" data-q="64" data-section="Mixed Practice">
   <div class="q-label">Q64 · MCQ</div>
-  <div class="q-text">Which OOP principle means that an object keeps its internal data private and only exposes what is necessary?</div>
+  <div class="q-text">What is the output of <code>list(filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5]))</code>?</div>
   <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> Inheritance</button>
-    <button class="option-btn" data-val="B"><span class="opt-key">B</span> Polymorphism</button>
-    <button class="option-btn" data-val="C" data-correct="true"><span class="opt-key">C</span> Encapsulation</button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> Abstraction</button>
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> <code>[1, 3, 5]</code></button>
+    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> <code>[2, 4]</code></button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>[True, True]</code></button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> Error</button>
   </div>
-  <div class="feedback">The four OOP pillars are: Encapsulation, Abstraction, Inheritance, Polymorphism (EAIP).</div>
+  <div class="feedback"><code>filter()</code> keeps only elements for which the lambda returns <code>True</code>. Even numbers from the list: 2 and 4.</div>
 </div>
 
-<div class="card" data-q="65" data-section="PDBC & OOP">
-  <div class="q-label">Q65 · MCQ</div>
-  <div class="q-text">In Python, how do you define a class?</div>
+<div class="card" data-q="65" data-section="Mixed Practice">
+  <div class="q-label">Q65 · Code Output</div>
+  <div class="q-text">What is the output?</div>
+  <pre class="code-block">def power(base, exp=2):
+    return base ** exp
+print(power(4))</pre>
   <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> <code>define MyClass:</code></button>
-    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> <code>class MyClass:</code></button>
-    <button class="option-btn" data-val="C"><span class="opt-key">C</span> <code>object MyClass:</code></button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> <code>struct MyClass:</code></button>
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> 8</button>
+    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> 16</button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> Error — missing argument</button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> 6</button>
   </div>
-  <div class="feedback"></div>
+  <div class="feedback"><code>exp</code> defaults to 2, so <code>power(4)</code> computes <code>4 ** 2 = 16</code>.</div>
 </div>
 
-<div class="card" data-q="66" data-section="PDBC & OOP">
-  <div class="q-label">Q66 · MCQ</div>
-  <div class="q-text">What is the purpose of the <code>__init__</code> method in a Python class?</div>
+<div class="card" data-q="66" data-section="Mixed Practice">
+  <div class="q-label">Q66 · Code Output</div>
+  <div class="q-text">What is the output?</div>
+  <pre class="code-block">x = [1, 2, 3]
+y = x.copy()
+y.append(4)
+print(len(x))</pre>
   <div class="options">
-    <button class="option-btn" data-val="A"><span class="opt-key">A</span> It destroys the object when it's no longer needed</button>
-    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> It is the constructor — it initializes the object's attributes when an instance is created</button>
-    <button class="option-btn" data-val="C"><span class="opt-key">C</span> It is called at the end of every method</button>
-    <button class="option-btn" data-val="D"><span class="opt-key">D</span> It imports other classes</button>
+    <button class="option-btn" data-val="A"><span class="opt-key">A</span> 4</button>
+    <button class="option-btn" data-val="B" data-correct="true"><span class="opt-key">B</span> 3</button>
+    <button class="option-btn" data-val="C"><span class="opt-key">C</span> 1</button>
+    <button class="option-btn" data-val="D"><span class="opt-key">D</span> Error</button>
   </div>
-  <div class="feedback"><code>__init__(self, ...)</code> is automatically called when you do <code>obj = MyClass(args)</code>.</div>
+  <div class="feedback"><code>y = x.copy()</code> creates an independent copy. Appending to <code>y</code> does not affect <code>x</code>, so <code>len(x)</code> is still 3.</div>
 </div>
 
 <!-- BONUS RAPID-FIRE SECTION -->
@@ -1370,7 +1377,7 @@ print(a[::-1])</pre>
     "Strings":       [45,46,47,48],
     "Exceptions":    [49,50,51,52,53],
     "File Handling": [54,55,56,57,58],
-    "PDBC & OOP":    [59,60,61,62,63,64,65,66],
+    "Mixed Practice": [59,60,61,62,63,64,65,66],
     "Bonus":         [67,68,69,70],
   };
 
@@ -1411,9 +1418,9 @@ print(a[::-1])</pre>
       concepts: ["Modes: 'r' (read), 'w' (write/overwrite), 'a' (append), 'x' (create new), 'rb'/'wb' (binary)", "with open(file) as f: — automatically closes the file", "read() = whole file, readline() = one line, readlines() = list of lines", "pickle.dump(obj, f) / pickle.load(f) — serialize/deserialize Python objects", "csv.writer / csv.reader — use newline='' when opening CSV files", "os.getcwd(), os.listdir(), os.mkdir(), os.rename(), os.remove()"],
       note: "Review your class notes on File Handling. Write a program that saves a list of student names using both pickle and CSV, then reads them back."
     },
-    "PDBC & OOP": {
-      concepts: ["Steps: import connector → connect() → cursor() → execute() → commit()/fetchall() → close()", "DDL: CREATE TABLE, ALTER TABLE, DROP TABLE", "DML: INSERT, UPDATE, DELETE — need connection.commit() to save", "DRL: SELECT — use cursor.fetchone() or cursor.fetchall()", "class ClassName: → __init__(self, ...) is the constructor", "self refers to the current instance of the class", "OOP pillars: Encapsulation, Abstraction, Inheritance, Polymorphism"],
-      note: "Review your class notes on Database Communication and OOP. Re-do the PDBC case study from scratch and practice the class/object examples from the OOP introduction."
+    "Mixed Practice": {
+      concepts: ["len() counts only top-level elements — nested lists count as 1", "TypeError: cannot mix str and int with + operator", "extend() unpacks elements; append() adds as a single nested item", "bool('') is False; any non-empty string is truthy", "File mode 'x' raises FileExistsError if the file already exists", "filter() keeps elements where the lambda returns True", "Default parameters make arguments optional", "list.copy() creates an independent shallow copy"],
+      note: "These questions mix concepts from multiple topics. Go back to any topic where you made a mistake."
     },
     "Bonus": {
       concepts: ["type(None) → <class 'NoneType'>", "sorted(list, reverse=True) returns a new sorted list, original unchanged", "s[::-1] reverses any sequence", "Persistent apps store data permanently (files/databases); non-persistent lose data on exit"],

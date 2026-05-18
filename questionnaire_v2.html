@@ -1182,82 +1182,91 @@
 </div>
 
 <!-- ═══════════════════════════════════
-     SECTION 10 · PDBC & OOP (Q70–75)
+     SECTION 10 · Mixed Practice (Q70–75)
 ════════════════════════════════════ -->
 <div class="section-div">
-  <div class="chip">Section 10 · PDBC &amp; OOP Introduction</div><hr>
+  <div class="chip">Section 10 · Mixed Practice</div><hr>
 </div>
 
-<div class="qcard" data-q="70" data-sec="PDBC & OOP">
+<div class="qcard" data-q="70" data-sec="Mixed Practice">
   <div class="qcard-head"><div class="qnum">Q70</div>
-    <div class="qtext">What does DDL stand for in database terminology?</div></div>
+    <div class="qtext">What does <code>enumerate(["a", "b", "c"])</code> produce when iterated?</div></div>
   <div class="opts">
-    <button class="opt" data-v="A"><span class="key">A</span> Data Download Language</button>
-    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> Data Definition Language</button>
-    <button class="opt" data-v="C"><span class="key">C</span> Dynamic Data Loading</button>
-    <button class="opt" data-v="D"><span class="key">D</span> Data Deletion Layer</button>
+    <button class="opt" data-v="A"><span class="key">A</span> <code>[0, 1, 2]</code></button>
+    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> <code>[(0, "a"), (1, "b"), (2, "c")]</code></button>
+    <button class="opt" data-v="C"><span class="key">C</span> <code>{"a": 0, "b": 1, "c": 2}</code></button>
+    <button class="opt" data-v="D"><span class="key">D</span> <code>["a", "b", "c"]</code></button>
   </div>
-  <div class="expl">DDL = Data Definition Language (CREATE, ALTER, DROP). DML = Data Manipulation Language (INSERT, UPDATE, DELETE). DRL = Data Retrieval Language (SELECT).</div>
+  <div class="expl"><code>enumerate()</code> pairs each element with its index as <code>(index, value)</code> tuples. Useful in for loops: <code>for i, v in enumerate(lst)</code>.</div>
 </div>
 
-<div class="qcard" data-q="71" data-sec="PDBC & OOP">
+<div class="qcard" data-q="71" data-sec="Mixed Practice">
   <div class="qcard-head"><div class="qnum">Q71</div>
-    <div class="qtext">What object is used to execute SQL queries in Python database communication?</div></div>
+    <div class="qtext">What is the output of <code>max(["apple", "banana", "cherry"])</code>?</div></div>
   <div class="opts">
-    <button class="opt" data-v="A"><span class="key">A</span> Connection object</button>
-    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> Cursor object</button>
-    <button class="opt" data-v="C"><span class="key">C</span> Query object</button>
-    <button class="opt" data-v="D"><span class="key">D</span> Database object</button>
+    <button class="opt" data-v="A"><span class="key">A</span> <code>"apple"</code></button>
+    <button class="opt" data-v="B"><span class="key">B</span> <code>"banana"</code></button>
+    <button class="opt" data-v="C" data-c="1"><span class="key">C</span> <code>"cherry"</code></button>
+    <button class="opt" data-v="D"><span class="key">D</span> Error</button>
   </div>
-  <div class="expl">You get a cursor via <code>cursor = connection.cursor()</code>, then call <code>cursor.execute("SQL here")</code>.</div>
+  <div class="expl"><code>max()</code> on strings compares lexicographically (like a dictionary). "cherry" comes last alphabetically, so it is the maximum.</div>
 </div>
 
-<div class="qcard" data-q="72" data-sec="PDBC & OOP">
+<div class="qcard" data-q="72" data-sec="Mixed Practice">
   <div class="qcard-head"><div class="qnum">Q72</div>
-    <div class="qtext">What SQL command removes all rows from a table and the table structure itself?</div></div>
+    <div class="qtext">What is the output?
+      <pre style="background:#1a202c;color:#e2e8f0;border-radius:8px;padding:12px 16px;margin-top:10px;font-family:monospace;font-size:0.88rem">try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("Error")</pre>
+    </div></div>
   <div class="opts">
-    <button class="opt" data-v="A"><span class="key">A</span> <code>DELETE</code></button>
-    <button class="opt" data-v="B"><span class="key">B</span> <code>REMOVE</code></button>
-    <button class="opt" data-v="C" data-c="1"><span class="key">C</span> <code>DROP TABLE</code></button>
-    <button class="opt" data-v="D"><span class="key">D</span> <code>TRUNCATE</code></button>
+    <button class="opt" data-v="A"><span class="key">A</span> 0</button>
+    <button class="opt" data-v="B"><span class="key">B</span> None</button>
+    <button class="opt" data-v="C" data-c="1"><span class="key">C</span> Error</button>
+    <button class="opt" data-v="D"><span class="key">D</span> Program crashes with no output</button>
   </div>
-  <div class="expl"><code>DROP TABLE</code> removes the table entirely (DDL). <code>DELETE</code> removes rows but keeps the table (DML). <code>TRUNCATE</code> empties rows but keeps the structure.</div>
+  <div class="expl">Division by zero raises <code>ZeroDivisionError</code>, which the <code>except</code> block catches and prints "Error".</div>
 </div>
 
-<div class="qcard" data-q="73" data-sec="PDBC & OOP">
+<div class="qcard" data-q="73" data-sec="Mixed Practice">
   <div class="qcard-head"><div class="qnum">Q73</div>
-    <div class="qtext">In OOP, what is an <strong>object</strong>?</div></div>
+    <div class="qtext">What is the output of <code>"Python"[1:4]</code>?</div></div>
   <div class="opts">
-    <button class="opt" data-v="A"><span class="key">A</span> A blueprint for creating instances</button>
-    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> An instance (real-world entity) created from a class</button>
-    <button class="opt" data-v="C"><span class="key">C</span> A function defined inside a module</button>
-    <button class="opt" data-v="D"><span class="key">D</span> A variable that stores multiple values</button>
+    <button class="opt" data-v="A"><span class="key">A</span> <code>"Pyt"</code></button>
+    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> <code>"yth"</code></button>
+    <button class="opt" data-v="C"><span class="key">C</span> <code>"ytho"</code></button>
+    <button class="opt" data-v="D"><span class="key">D</span> <code>"ython"</code></button>
   </div>
-  <div class="expl">A <em>class</em> is the blueprint; an <em>object</em> is the actual instance. Example: <code>Car</code> is a class; <code>my_car = Car()</code> is an object.</div>
+  <div class="expl">Index 1="y", 2="t", 3="h" — stop index 4 is excluded. Result: <code>"yth"</code>.</div>
 </div>
 
-<div class="qcard" data-q="74" data-sec="PDBC & OOP">
+<div class="qcard" data-q="74" data-sec="Mixed Practice">
   <div class="qcard-head"><div class="qnum">Q74</div>
-    <div class="qtext">What is the first parameter of every instance method in a Python class?</div></div>
+    <div class="qtext">What does <code>dict.pop("key")</code> do if the key exists?</div></div>
   <div class="opts">
-    <button class="opt" data-v="A"><span class="key">A</span> <code>this</code></button>
-    <button class="opt" data-v="B"><span class="key">B</span> <code>cls</code></button>
-    <button class="opt" data-v="C" data-c="1"><span class="key">C</span> <code>self</code></button>
-    <button class="opt" data-v="D"><span class="key">D</span> <code>me</code></button>
+    <button class="opt" data-v="A"><span class="key">A</span> Returns the value without removing the key</button>
+    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> Removes the key and returns its value</button>
+    <button class="opt" data-v="C"><span class="key">C</span> Always returns <code>None</code></button>
+    <button class="opt" data-v="D"><span class="key">D</span> Raises a <code>TypeError</code></button>
   </div>
-  <div class="expl"><code>self</code> refers to the current instance of the class. It is a convention (not a keyword), but universally followed.</div>
+  <div class="expl"><code>pop()</code> removes the key-value pair and returns the value. Use <code>pop("key", default)</code> to avoid <code>KeyError</code> if the key might not exist.</div>
 </div>
 
-<div class="qcard" data-q="75" data-sec="PDBC & OOP">
+<div class="qcard" data-q="75" data-sec="Mixed Practice">
   <div class="qcard-head"><div class="qnum">Q75</div>
-    <div class="qtext">Which OOP principle allows a child class to use methods and attributes of a parent class?</div></div>
+    <div class="qtext">What is the output?
+      <pre style="background:#1a202c;color:#e2e8f0;border-radius:8px;padding:12px 16px;margin-top:10px;font-family:monospace;font-size:0.88rem">words = ["hi", "hello", "hey"]
+result = list(map(lambda w: w.upper(), words))
+print(result)</pre>
+    </div></div>
   <div class="opts">
-    <button class="opt" data-v="A"><span class="key">A</span> Encapsulation</button>
-    <button class="opt" data-v="B"><span class="key">B</span> Polymorphism</button>
-    <button class="opt" data-v="C"><span class="key">C</span> Abstraction</button>
-    <button class="opt" data-v="D" data-c="1"><span class="key">D</span> Inheritance</button>
+    <button class="opt" data-v="A"><span class="key">A</span> <code>["hi", "hello", "hey"]</code></button>
+    <button class="opt" data-v="B" data-c="1"><span class="key">B</span> <code>["HI", "HELLO", "HEY"]</code></button>
+    <button class="opt" data-v="C"><span class="key">C</span> <code>"HI HELLO HEY"</code></button>
+    <button class="opt" data-v="D"><span class="key">D</span> Error</button>
   </div>
-  <div class="expl">Inheritance lets a child class (<code>class Dog(Animal)</code>) reuse code from the parent class (<code>Animal</code>), extending or overriding as needed.</div>
+  <div class="expl"><code>map()</code> applies the lambda to every element. <code>.upper()</code> converts each string to uppercase. Wrapping in <code>list()</code> materialises the result.</div>
 </div>
 
 <!-- SUBMIT -->
@@ -1318,7 +1327,7 @@
     "Strings":       range(54,59),
     "Exceptions":    range(59,64),
     "File Handling": range(64,70),
-    "PDBC & OOP":    range(70,76),
+    "Mixed Practice": range(70,76),
   };
 
   const TIPS = {
@@ -1358,9 +1367,9 @@
       concepts: ["'r' read, 'w' write (overwrites), 'a' append, 'x' create (fails if exists), 'rb'/'wb' binary", "with open(file) as f: — context manager, auto-closes file", "read() = full content, readline() = one line, readlines() = list of lines", "pickle.dump(obj, f) serialises; pickle.load(f) deserialises — open in 'wb'/'rb' mode", "csv.writer(f).writerow(row) — use newline='' when opening the file", "os.getcwd() = current directory, os.chdir(path) = change directory"],
       note: "Review your class notes on File Handling. Write a program that saves student records using both pickle and CSV, then reads them back."
     },
-    "PDBC & OOP": {
-      concepts: ["Steps: connect() → cursor() → execute(SQL) → commit()/fetchall() → close()", "DDL (CREATE, ALTER, DROP) vs DML (INSERT, UPDATE, DELETE) vs DRL (SELECT)", "connection.commit() is required after INSERT/UPDATE/DELETE to persist changes", "fetchone() returns one row as a tuple; fetchall() returns all rows as a list of tuples", "class MyClass: → def __init__(self, ...): → self is the current instance", "Inheritance: class Dog(Animal): — Dog inherits all methods of Animal", "Encapsulation: hide internal data; Polymorphism: same method, different behaviour"],
-      note: "Review your class notes on Database Communication and OOP. Re-implement the PDBC case study from scratch and run the OOP class examples."
+    "Mixed Practice": {
+      concepts: ["len() counts only top-level elements — nested lists count as 1", "TypeError: cannot mix str and int with + operator", "extend() unpacks elements; append() adds as a single nested item", "enumerate() gives (index, value) pairs", "max() on strings uses lexicographic order", "ZeroDivisionError is caught by except ZeroDivisionError", "String slicing [start:stop] excludes stop index", "dict.pop(key) removes and returns the value", "map() applies a function to every element"],
+      note: "These questions mix concepts from multiple topics. Go back to any topic where you made a mistake."
     },
   };
 
