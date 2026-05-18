@@ -1324,43 +1324,43 @@
   const TIPS = {
     "Data Types": {
       concepts: ["Mutable (list, dict, set) vs Immutable (int, float, str, tuple, frozenset)", "Type casting: int(), float(), str(), bool(), complex()", "bytes (immutable) vs bytearray (mutable)", "bool() falsy values: 0, '', [], {}, None", "/ always returns float in Python 3; // returns integer", "range() is a lazy iterator, not a stored list"],
-      note: "Revise notes from 11-May-2023 to 13-May-2023. Convert the same value through every casting function and observe the output."
+      note: "Review your class notes on Data Types. Convert the same value through every casting function and observe the output."
     },
     "Collections": {
       concepts: ["List: append, insert(i,v), pop, remove, sort, sorted, extend, index, count", "Single-element tuple: (5,) — trailing comma is mandatory", "Set: add, remove (raises error), discard (silent), union |, intersection &, difference -, symmetric_difference ^", "frozenset is immutable and hashable — can be a dict key or set member", "Dict: get(key,default), keys(), values(), items(), update(), pop()", "b = a is an alias; b = a.copy() is a shallow copy; copy.deepcopy(a) is deep"],
-      note: "Revise 15-May to 22-May notes. Draw memory diagrams for shallow vs deep copy to understand references."
+      note: "Review your class notes on Collection Data Types. Draw memory diagrams for shallow vs deep copy to understand references."
     },
     "Operators": {
       concepts: ["9 % 4 = 1 (remainder), 9 // 4 = 2 (floor division)", "Compound assignment: +=, -=, *=, //=, **=, &=, |=", "Bitwise OR: 5|3 = 7 (101|011=111), XOR: 5^3 = 6 (101^011=110)", "Right shift >>: divide by 2ⁿ; Left shift <<: multiply by 2ⁿ", "not (True and False) = not False = True", "Operator precedence: ** > * / // % > + - > bitwise > comparisons > not > and > or"],
-      note: "Revise 26-May to 31-May notes. For every bitwise question, write the binary form of both numbers first."
+      note: "Review your class notes on Operators. For every bitwise question, write the binary form of both numbers first."
     },
     "Flow Control": {
       concepts: ["break exits the loop entirely; continue skips only the current iteration; pass does nothing", "while False: body never runs — condition checked first", "for-else / while-else: else block runs only if loop was NOT broken", "for k in dict: gives keys (use .values() or .items() for more)", "pass is a syntactic placeholder — not the same as continue", "match-case (Python 3.10+) — structural pattern matching"],
-      note: "Revise 01-Jun to 09-Jun notes. Trace for-else and while-else examples manually on paper."
+      note: "Review your class notes on Flow Control. Trace for-else and while-else examples manually on paper."
     },
     "Functions": {
       concepts: ["A function with no return statement returns None", "Default parameters must come after required parameters", "**kwargs collects keyword args into a dict; *args into a tuple", "global keyword needed before modifying a global variable inside a function", "lambda parameters: expression — no return keyword", "filter(func, iter) keeps elements where func returns True", "reduce(lambda a,b: a+b, [1,2,3,4]) = 10 — from functools", "Dict comprehension: {k: v for k, v in pairs}"],
-      note: "Revise 12-Jun to 20-Jun notes. Write 5 programs using lambda with map, filter, and reduce."
+      note: "Review your class notes on Functions. Write 5 programs using lambda with map, filter, and reduce."
     },
     "Modules": {
       concepts: ["__name__ == '__main__' — code runs only when file is executed directly", "import module as alias — use alias.function() afterwards", "dir(module) lists all names; help(module) shows documentation", "Package = folder with __init__.py file inside", "Python caches imports in sys.modules — module code won't run twice unless you reload", "from module import * — brings all public names into current namespace (use carefully)"],
-      note: "Revise 21-Jun to 23-Jun notes. Create a small package with two modules and import from it."
+      note: "Review your class notes on Modules and Packages. Create a small package with two modules and import from it."
     },
     "Strings": {
       concepts: ["Strings are immutable — s[0]='H' raises TypeError", "separator.join(list) joins a list: ', '.join(['a','b']) = 'a, b'", ".replace() returns a new string — does not modify in place", ".find('ll') returns starting index (2), or -1 if not found", "f-strings (Python 3.6+): f\"Hello {name}\" — most readable formatting style", "s[::-1] reverses a string"],
-      note: "Revise 24-Jun to 26-Jun notes. Practice 10 string manipulation problems — focus on join/split and slicing."
+      note: "Review your class notes on String Handling. Practice 10 string manipulation problems — focus on join/split and slicing."
     },
     "Exceptions": {
       concepts: ["BaseException → Exception → specific exceptions (ValueError, TypeError, etc.)", "FileNotFoundError is a subclass of OSError", "Multiple except blocks: each handles a different exception type", "except ValueError as e: — access the message with str(e) or print(e)", "TypeError = wrong type (len(5)); ValueError = right type, wrong value (int('abc'))", "try/except/else/finally: else only runs when no exception; finally always runs"],
-      note: "Revise 27-Jun to 29-Jun notes. Write programs that intentionally trigger each common exception type."
+      note: "Review your class notes on Exception Handling. Write programs that intentionally trigger each common exception type."
     },
     "File Handling": {
       concepts: ["'r' read, 'w' write (overwrites), 'a' append, 'x' create (fails if exists), 'rb'/'wb' binary", "with open(file) as f: — context manager, auto-closes file", "read() = full content, readline() = one line, readlines() = list of lines", "pickle.dump(obj, f) serialises; pickle.load(f) deserialises — open in 'wb'/'rb' mode", "csv.writer(f).writerow(row) — use newline='' when opening the file", "os.getcwd() = current directory, os.chdir(path) = change directory"],
-      note: "Revise 30-Jun to 06-Jul notes. Write a program that saves student records using both pickle and CSV, then reads them back."
+      note: "Review your class notes on File Handling. Write a program that saves student records using both pickle and CSV, then reads them back."
     },
     "PDBC & OOP": {
       concepts: ["Steps: connect() → cursor() → execute(SQL) → commit()/fetchall() → close()", "DDL (CREATE, ALTER, DROP) vs DML (INSERT, UPDATE, DELETE) vs DRL (SELECT)", "connection.commit() is required after INSERT/UPDATE/DELETE to persist changes", "fetchone() returns one row as a tuple; fetchall() returns all rows as a list of tuples", "class MyClass: → def __init__(self, ...): → self is the current instance", "Inheritance: class Dog(Animal): — Dog inherits all methods of Animal", "Encapsulation: hide internal data; Polymorphism: same method, different behaviour"],
-      note: "Revise 07-Jul to 13-Jul notes. Re-implement the PDBC case study from scratch and run the OOP class examples."
+      note: "Review your class notes on Database Communication and OOP. Re-implement the PDBC case study from scratch and run the OOP class examples."
     },
   };
 

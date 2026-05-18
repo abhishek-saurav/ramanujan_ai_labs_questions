@@ -1377,43 +1377,43 @@ print(a[::-1])</pre>
   const TIPS = {
     "Data Types": {
       concepts: ["Mutable (list, dict, set) vs Immutable (int, float, str, tuple, frozenset)", "Type casting: int(), float(), str(), bool(), complex()", "bytes (immutable) vs bytearray (mutable)", "bool() falsy values: 0, '', [], {}, None", "range() is a lazy iterator, not a list"],
-      note: "Revise notes from 11-May-2023 to 13-May-2023. Write a program that converts the same value using every casting function and observe the output."
+      note: "Review your class notes on Data Types. Write a program that converts the same value using every casting function and observe the output."
     },
     "Collections": {
       concepts: ["List: append, insert, pop, remove, sort, sorted, extend, index, count", "Single-element tuple: (5,) not (5)", "Set: add, remove, discard, union, intersection, difference, symmetric_difference", "frozenset is immutable and hashable (can be a dict key)", "Dict: get, keys, values, items, update, pop", "Shallow copy vs deep copy — b = a is an alias, not a copy"],
-      note: "Revise 15-May to 22-May notes. Draw memory diagrams for shallow vs deep copy to understand references."
+      note: "Review your class notes on Collection Data Types. Draw memory diagrams for shallow vs deep copy to understand references."
     },
     "Operators": {
       concepts: ["// = floor division, % = modulus, ** = exponentiation", "Bitwise: & (AND), | (OR), ^ (XOR), ~ (complement = -(n+1)), << (left shift ×2), >> (right shift ÷2)", "Identity: is / is not — checks memory address, not value", "Membership: in / not in", "Ternary: value_if_true if condition else value_if_false", "Operator precedence: ** > * / // % > + - > comparisons > not > and > or"],
-      note: "Revise 26-May to 31-May notes. Practice bitwise problems by writing out the binary representation of each number."
+      note: "Review your class notes on Operators. Practice bitwise problems by writing out the binary representation of each number."
     },
     "Flow Control": {
       concepts: ["if / elif / else — only one branch executes", "while loop — condition checked before every iteration", "for loop with range(start, stop, step)", "break exits the loop entirely; continue skips to next iteration", "pass is a no-operation placeholder", "for-else / while-else — else runs only if loop was not broken", "Nested loops — trace manually step by step"],
-      note: "Revise 01-Jun to 09-Jun notes. Trace nested loop examples on paper before running them — it builds intuition."
+      note: "Review your class notes on Flow Control. Trace nested loop examples on paper before running them — it builds intuition."
     },
     "Functions": {
       concepts: ["Default parameters must come after required parameters", "*args collects extra positional args as a tuple; **kwargs collects keyword args as a dict", "Local variable scope — exists only inside the function", "global keyword needed to modify a global variable inside a function", "lambda x: expression — anonymous single-line function", "map(func, iterable), filter(func, iterable) return lazy iterators", "from functools import reduce — accumulates to a single value", "List comprehension: [expr for x in iter if condition]"],
-      note: "Revise 12-Jun to 20-Jun notes. Write 5 mini-programs using lambda with map, filter, and reduce to build fluency."
+      note: "Review your class notes on Functions. Write 5 mini-programs using lambda with map, filter, and reduce to build fluency."
     },
     "Modules": {
       concepts: ["import module, from module import name, import module as alias", "__name__ == '__main__' — runs only when file is executed directly", "dir(module) lists all attributes; help(module) shows documentation", "Package = folder + __init__.py file", "importlib.reload(module) re-executes a module that was already imported", "Python caches imports in sys.modules — same module won't run twice unless reloaded"],
-      note: "Revise 21-Jun to 23-Jun notes. Create your own module with 3 utility functions and import it from another file."
+      note: "Review your class notes on Modules and Packages. Create your own module with 3 utility functions and import it from another file."
     },
     "Strings": {
       concepts: ["Strings are immutable — any change creates a new string", "Slicing: s[start:stop:step], reverse with s[::-1]", "upper, lower, strip, lstrip, rstrip, split, join, replace, find, count, startswith, endswith", "f-strings: f\"Hello {name}\" — embed expressions directly", "String multiplication: 'ha' * 3 = 'hahaha'"],
-      note: "Revise 24-Jun to 26-Jun notes. Practice 10 string manipulation problems — focus on slicing and the join/split pair."
+      note: "Review your class notes on String Handling. Practice 10 string manipulation problems — focus on slicing and the join/split pair."
     },
     "Exceptions": {
       concepts: ["try / except / else / finally — else runs only when no exception occurs; finally always runs", "raise ValueError('message') — manually raise an exception", "Custom exception: class MyError(Exception): pass", "Common exceptions: ValueError, TypeError, IndexError, KeyError, ZeroDivisionError, FileNotFoundError", "except ExceptionType as e: — access the error message via e"],
-      note: "Revise 27-Jun to 29-Jun notes. Write a small ATM-like program that raises and catches custom exceptions for insufficient balance."
+      note: "Review your class notes on Exception Handling. Write a small ATM-like program that raises and catches custom exceptions for insufficient balance."
     },
     "File Handling": {
       concepts: ["Modes: 'r' (read), 'w' (write/overwrite), 'a' (append), 'x' (create new), 'rb'/'wb' (binary)", "with open(file) as f: — automatically closes the file", "read() = whole file, readline() = one line, readlines() = list of lines", "pickle.dump(obj, f) / pickle.load(f) — serialize/deserialize Python objects", "csv.writer / csv.reader — use newline='' when opening CSV files", "os.getcwd(), os.listdir(), os.mkdir(), os.rename(), os.remove()"],
-      note: "Revise 30-Jun to 06-Jul notes. Write a program that saves a list of student names using both pickle and CSV, then reads them back."
+      note: "Review your class notes on File Handling. Write a program that saves a list of student names using both pickle and CSV, then reads them back."
     },
     "PDBC & OOP": {
       concepts: ["Steps: import connector → connect() → cursor() → execute() → commit()/fetchall() → close()", "DDL: CREATE TABLE, ALTER TABLE, DROP TABLE", "DML: INSERT, UPDATE, DELETE — need connection.commit() to save", "DRL: SELECT — use cursor.fetchone() or cursor.fetchall()", "class ClassName: → __init__(self, ...) is the constructor", "self refers to the current instance of the class", "OOP pillars: Encapsulation, Abstraction, Inheritance, Polymorphism"],
-      note: "Revise 07-Jul to 13-Jul notes. Re-do the PDBC case study from scratch and practice the class/object examples from the OOP introduction."
+      note: "Review your class notes on Database Communication and OOP. Re-do the PDBC case study from scratch and practice the class/object examples from the OOP introduction."
     },
     "Bonus": {
       concepts: ["type(None) → <class 'NoneType'>", "sorted(list, reverse=True) returns a new sorted list, original unchanged", "s[::-1] reverses any sequence", "Persistent apps store data permanently (files/databases); non-persistent lose data on exit"],
